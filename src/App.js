@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import CountUp, { useCountUp } from "react-countup";
 
 function App() {
+  // const { countUp, start, pauseResume, reset, update } = useCountUp({
+  //   duration: 5,
+  //   end: 10000,
+  //   startOnMount: false,
+  // });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <div>
+        <h1>{countUp}</h1>
+        <button onClick={start}>Start</button>
+        <button onClick={reset}>Reset</button>
+        <button onClick={pauseResume}>Pause</button>
+        <button onClick={() => update(2000)}>Start</button>
+      </div> */}
+      <h1>
+        <CountUp end={400} />
+      </h1>
+      <br></br>
+      <h1>
+        <CountUp end={400} duration={5} />
+      </h1>
+      <br></br>
+      <h1>
+        <CountUp start={300} end={400} duration={7} />
+      </h1>
+
+      <h1>
+        <CountUp end={1000} duration={5} prefix="$" decimal={2} />
+      </h1>
+      <h1>
+        <CountUp end={1000} duration={5} suffix="USD" decimal={2} />
+      </h1>
     </div>
   );
 }
